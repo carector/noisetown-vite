@@ -5,11 +5,13 @@ function Sidebar() {
 	return (
 		<>
 			<Card.Root>
-				<Tabs.Root>
+				<Tabs.Root fitted css={{
+					'background-color': 'clear'
+				}}>
 					<Tabs.List gap="2">
-						<Tabs.Trigger value="wanna">Wanna</Tabs.Trigger>
-						<Tabs.Trigger value="try">Try</Tabs.Trigger>
-						<Tabs.Trigger value="drugs">Drugs</Tabs.Trigger>
+						<Tabs.Trigger value="About">About</Tabs.Trigger>
+						<Tabs.Trigger value="Projects">Projects</Tabs.Trigger>
+						<Tabs.Trigger value="Personal">Personal</Tabs.Trigger>
 					</Tabs.List>
 				</Tabs.Root>
 			</Card.Root>

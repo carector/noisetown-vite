@@ -19,7 +19,7 @@ function CenterBox({ title, dotted, children }: CenterCardProps) {
 				alignItems={'left'}
 				padding={0}
 				fluid={true}
-				maxW={{ md: 'xl', mdDown: 'full' }}
+				maxW={{ md: 'xl', mdDown: '100vw' }}
 			>
 				<Heading
 					padding={3}
