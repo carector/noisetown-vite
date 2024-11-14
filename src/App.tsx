@@ -7,6 +7,7 @@ import {
 	SimpleGrid,
 	Center,
 	AspectRatio,
+	Separator,
 } from '@chakra-ui/react';
 import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
@@ -18,16 +19,18 @@ function App() {
 			<Container hideBelow="md">
 				<Sidebar></Sidebar>
 			</Container>
-			
-			<CenterBox title="Hey now">
-				<p>Don't even THINK about it man</p>
-				<br />
-				<p>
-					Ohhh you're thinking about
-					itddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+			<br></br>
+			<CenterBox title="About me">
+				<p>Welcome to my page! I'm a recent college graduate and full-stack web developer living in the Greater Seattle Area. On top of 18 months of professional experience, I also have over 10 years of personal experience developing .net C# applications - including desktop and VR/AR work in Unity 3D.</p>
+			</CenterBox>
+			<CenterBox title="Skills and technologies">
+				<p>C#, Unity, JavaScript, TypeScript, Python, React.js, Express.js, AWS, Google Firebase,
+					Vite, C++, Java, HTML, CSS, Jira, Git, GitHub, R, JSON, Electron, and more
 				</p>
 			</CenterBox>
-			<CenterBox title="Lookit this" dotted={true}></CenterBox>
+			<CenterBox title="Lookit this" dotted={true}>
+				Wowza!
+			</CenterBox>
 		</>
 	);
 }

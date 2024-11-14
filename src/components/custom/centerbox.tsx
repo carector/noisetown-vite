@@ -22,7 +22,7 @@ function CenterBox({ title, dotted, children }: CenterCardProps) {
 				maxW={{ md: 'xl', mdDown: '100vw' }}
 			>
 				<Heading
-					padding={3}
+					padding={2}
 					textAlign="left"
 					size="xl"
 					color={dotted ? orange : white}
@@ -46,6 +46,7 @@ function CenterBox({ title, dotted, children }: CenterCardProps) {
 					</Text> */}
 				</Box>
 			</Container>
+			<br/>
 		</>
 	);
 }
