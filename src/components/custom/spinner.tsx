@@ -1,4 +1,4 @@
-import { AspectRatio, Image } from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react';
 import orangeCirc from '../../assets/bg_orange_circle.svg';
 import '../.././App.css';
 

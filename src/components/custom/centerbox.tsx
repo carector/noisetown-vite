@@ -1,5 +1,5 @@
 import '../.././App.css';
-import { Box, Card, Container, Heading, Spacer, Text } from '@chakra-ui/react';
+import { Box, Container, Heading } from '@chakra-ui/react';
 
 interface CenterCardProps {
 	title: string;
@@ -7,10 +7,10 @@ interface CenterCardProps {
 	children?: React.ReactNode;
 }
 
-const yellow = '#FD972B';
+// const yellow = '#FD972B';
 const orange = '#DD4624';
 const white = '#E5E5E5';
-const purple = '#E5E5E5';
+// const purple = '#E5E5E5';
 
 function CenterBox({ title, dotted, children }: CenterCardProps) {
 	return (
