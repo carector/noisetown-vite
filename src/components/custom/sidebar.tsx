@@ -5,7 +5,7 @@ function Sidebar() {
 	return (
 		<>
 			<Card.Root>
-				<Tabs.Root fitted css={{
+				<Tabs.Root variant={'enclosed'} fitted css={{
 					'background-color': 'clear'
 				}}>
 					<Tabs.List gap="2">
