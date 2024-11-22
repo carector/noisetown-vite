@@ -16,7 +16,7 @@ function App() {
 			<br></br>
 			<CenterBox title="About me">
 				<p>
-					I'm a recent college graduate Greater Seattle Area specializing in full-stack web development. I'm currently in pursuit of full-time and contract work.</p>
+					I'm a recent college graduate from the Greater Seattle Area specializing in full-stack web development. I'm currently in pursuit of full-time and contract work.</p>
 				<br /><p>
 					I'm most interested in backend web development roles. I have 1 year of professional experience with Express.js and would be comfortable working in any JavaScript or TypeScript role.
 					Technologies I worked with extensively at my most recent position include React.js, AWS, Postman, and Jira.</p>
@@ -27,8 +27,8 @@ function App() {
 					When I'm not programming I like to take field recordings, make electronic music and tinker with synthesizer hardware.
 					I love experimenting with anything audio-related - it's probably what I'd be doing if I didn't have all this code to write!</p>
 				<br /><p>
-					I'm always on the lookout for new projects I can contribute to, and I'd love to be a part of yours.
-					Reach out to me here if you'd like to connect or grab a cup of coffee. Let's build something together!
+					I'm always on the lookout for new projects I can contribute to, and I'd love to be a part of yours. 
+					<a href="mailto:calebrector77@gmail.com"> Reach out to me here</a> if you'd like to connect or grab a cup of coffee. Let's build something together!
 				</p>
 			</CenterBox>
 			<CenterBox title="Skills and technologies">
