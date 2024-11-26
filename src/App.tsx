@@ -5,6 +5,15 @@ import {
 } from '@chakra-ui/react';
 import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
+//import * as wakatime from './utils.js';
+
+async function getAllTimeSinceToday() {
+	const response = await fetch('https://wakatime.com/share/@59402cab-1799-4733-b30d-ec5d8ed0a7c9/96f3a5ba-466c-4297-aa5e-195fbec31b37.json');
+	return response.json();
+}
+
+const data = await getAllTimeSinceToday();
+console.log(data);
 
 function App() {
 	return (
@@ -27,7 +36,7 @@ function App() {
 					When I'm not programming I like to take field recordings, make electronic music and tinker with synthesizer hardware.
 					I love experimenting with anything audio-related - it's probably what I'd be doing if I didn't have all this code to write!</p>
 				<br /><p>
-					I'm always on the lookout for new projects I can contribute to, and I'd love to be a part of yours. 
+					I'm always on the lookout for new projects I can contribute to, and I'd love to be a part of yours.
 					<a href="mailto:calebrector77@gmail.com"> Reach out to me here</a> if you'd like to connect or grab a cup of coffee. Let's build something together!
 				</p>
 			</CenterBox>
@@ -37,7 +46,8 @@ function App() {
 				</p>
 			</CenterBox>
 			<CenterBox title="Lookit this" dotted>
-				Wowza!
+				
+
 			</CenterBox>
 		</>
 	);
