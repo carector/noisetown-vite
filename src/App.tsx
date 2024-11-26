@@ -1,9 +1,10 @@
 import './App.css';
 import Sidebar from './components/custom/sidebar';
 import { Container } from '@chakra-ui/react';
-import Spinner from './components/custom/spinner';
+//import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
 import { Cell, Tooltip, BarChart, XAxis, Bar } from 'recharts';
+import { useEffect, useState } from 'react';
 //import * as wakatime from './utils.js';
 
 async function getAllTimeSinceToday() {
@@ -15,16 +16,23 @@ async function getAllTimeSinceToday() {
 
 const white = '#E5E5E5';
 const magenta = '#BE2178';
-const bblue = '#9CD9EE';
+//const blue = '#9CD9EE';
 const red = '#D02E08';
 const orange = '#FD972B';
 const pink = '#F67B7E';
 const chartColors = [orange, red, pink, magenta];
 
-const res = await getAllTimeSinceToday();
-const langData = res.data.slice(0, 5);
-
 function App() {
+	const [langData, setLangData] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const res = await getAllTimeSinceToday();
+			setLangData(res.data.slice(0, 5));
+		}
+		fetchData();
+	}, []);
+
 	return (
 		<>
 			{/* <Spinner></Spinner> */}
@@ -88,7 +96,7 @@ function App() {
 					<XAxis stroke={white} dataKey="name" />
 					<Tooltip />
 					<Bar dataKey="decimal" fill={chartColors[0]}>
-						{langData.map((entry: any, index: any) => (
+						{langData.map((_entry: any, index: any) => (
 							<Cell
 								key={`cell-${index}`}
 								fill={chartColors[index % chartColors.length]}
