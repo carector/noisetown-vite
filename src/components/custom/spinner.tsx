@@ -6,14 +6,14 @@ function Spinner() {
 	return (
 			<Image
 				style={{
-					position: 'absolute',
+					position: 'fixed',
 					margin: 'auto',
 					left: 0,
 					right: 0,
 					zIndex: -1,
-					top: '20%',
-					width: '50%',
-					maxWidth: '480',
+					top: '55%',
+					width: '80%',
+					maxWidth: '600',
 					animation: `spin 3s linear infinite`,
 				}}
 				src={orangeCirc}
