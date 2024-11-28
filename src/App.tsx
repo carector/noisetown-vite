@@ -20,7 +20,7 @@ const magenta = '#BE2178';
 const red = '#D02E08';
 const orange = '#FD972B';
 const pink = '#F67B7E';
-const chartColors = [orange, red, pink, magenta];
+const chartColors = [orange, red, magenta, pink];
 
 function App() {
 	const [langData, setLangData] = useState([]);
@@ -86,9 +86,13 @@ function App() {
 			</CenterBox>
 			<CenterBox title="Skills and technologies" dotted>
 				<p>
-					C#, Unity, JavaScript, TypeScript, Python, React.js,
-					Express.js, AWS, Firebase, Vite, C++, Java, HTML, CSS, Jira,
-					Git, GitHub, JSON, Electron, and more
+					C#, JavaScript, TypeScript, Python, Java, HTML, CSS, C++, JSON
+				</p>
+				<p>
+					Unity, React.js, Express.js, AWS, Firebase, Vite, Swagger, Electron
+				</p>
+				<p>
+					Git, GitHub, Jira, Figma, Cloudflare Pages
 				</p>
 			</CenterBox>
 			<CenterBox title="Work breakdown (past week)">
