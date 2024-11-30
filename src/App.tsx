@@ -3,7 +3,7 @@ import Sidebar from './components/custom/sidebar';
 import { Container } from '@chakra-ui/react';
 //import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
-import { Cell, Tooltip, BarChart, XAxis, Bar } from 'recharts';
+import { Cell, Tooltip, BarChart, XAxis, YAxis, Bar } from 'recharts';
 import { useEffect, useState } from 'react';
 //import * as wakatime from './utils.js';
 
@@ -95,10 +95,13 @@ function App() {
 					Git, GitHub, Jira, Figma, Cloudflare Pages
 				</p>
 			</CenterBox>
-			<CenterBox title="Work breakdown (past week)">
+			<CenterBox title="Work breakdown (hours this week)">
 				<BarChart width={500} height={300} data={langData}>
 					<XAxis stroke={white} dataKey="name" />
-					<Tooltip />
+					<YAxis stroke={white} dataKey="decimal"/>
+					<Tooltip contentStyle={{
+						backgroundColor: 'black'
+					}}/>
 					<Bar dataKey="decimal" fill={chartColors[0]}>
 						{langData.map((_entry: any, index: any) => (
 							<Cell
