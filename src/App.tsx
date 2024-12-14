@@ -1,5 +1,5 @@
 import './App.css';
-import Sidebar from './components/custom/sidebar';
+// import Sidebar from './components/custom/sidebar';
 import { Grid } from '@chakra-ui/react';
 import TechIcon from './components/custom/techicon';
 import Spinner from './components/custom/spinner';
@@ -15,7 +15,7 @@ async function getAllTimeSinceToday() {
 	return response.json();
 }
 
-const darkbrown = '#1a1a1a';
+// const darkbrown = '#1a1a1a';
 const brown = '#2f1c18';
 const white = '#E5E5E5';
 const magenta = '#BE2178';
