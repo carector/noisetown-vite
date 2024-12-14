@@ -11,7 +11,7 @@ function Spinner() {
 					left: 0,
 					right: 0,
 					zIndex: -1,
-					top: '55%',
+					top: '15%',
 					width: '80%',
 					maxWidth: '600',
 					animation: `spin 3s linear infinite`,

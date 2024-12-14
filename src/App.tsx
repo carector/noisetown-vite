@@ -1,7 +1,8 @@
 import './App.css';
 import Sidebar from './components/custom/sidebar';
-import { Container } from '@chakra-ui/react';
-//import Spinner from './components/custom/spinner';
+import { Grid } from '@chakra-ui/react';
+import TechIcon from './components/custom/techicon';
+import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
 import { Cell, Tooltip, BarChart, XAxis, YAxis, Bar } from 'recharts';
 import { useEffect, useState } from 'react';
@@ -14,6 +15,8 @@ async function getAllTimeSinceToday() {
 	return response.json();
 }
 
+const darkbrown = '#1a1a1a';
+const brown = '#2f1c18';
 const white = '#E5E5E5';
 const magenta = '#BE2178';
 //const blue = '#9CD9EE';
@@ -24,23 +27,107 @@ const chartColors = [orange, red, magenta, pink];
 
 function App() {
 	const [langData, setLangData] = useState([]);
+	const [maxHours, setMaxHours] = useState(0);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await getAllTimeSinceToday();
 			setLangData(res.data.slice(0, 5));
-		}
+			console.log(res.data[0]['decimal']);
+			setMaxHours(res.data[0]['decimal']);
+		};
 		fetchData();
 	}, []);
 
 	return (
 		<>
-			{/* <Spinner></Spinner> */}
+			<Spinner></Spinner>
 
-			<Container hideBelow="md">
+			{/* <Container hideBelow="md">
 				<Sidebar></Sidebar>
-			</Container>
+			</Container> */}
 			<br></br>
+			<link
+				rel="stylesheet"
+				type="text/css"
+				href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+			/>
+			<h1>Caleb Rector</h1>
+			<br/>
+			<CenterBox title="">
+				<p>GitHub: <a href="https://github.com/carector">github.com/carector</a></p>
+				<p>LinkedIn: <a href="https://linkedin.com/in/caleb-rector">linkedin.com/in/caleb-rector</a></p>
+				<p>Creative projects: <a href="https://noise.town">noise.town</a></p>
+			</CenterBox>
+			<CenterBox title="Skills and technologies" dotted>
+				<Grid
+					templateRows="repeat(1, 1fr)"
+					templateColumns="repeat(7, 1fr)"
+				>
+					{/* <p style={{ textAlign: 'center' }}>Languages</p> */}
+					<TechIcon name="csharp" />
+					<TechIcon name="javascript" />
+					<TechIcon name="typescript" />
+					<TechIcon name="python" />
+					<TechIcon name="java" />
+					<TechIcon name="html5" />
+					<TechIcon name="css3" />
+					<TechIcon name="cplusplus" />
+					<TechIcon name="json" />
+					<TechIcon name="unity" />
+					<TechIcon name="react" />
+					{/* <TechIcon name="express" /> */}
+					<TechIcon name="amazonwebservices" />
+					<TechIcon name="firebase" />
+					<TechIcon name="mysql" />
+					<TechIcon name="vite" />
+					<TechIcon name="swagger" />
+					<TechIcon name="cloudflare" />
+					<TechIcon name="docker" />
+					<TechIcon name="antdesign" />
+					<TechIcon name="git" />
+					<TechIcon name="github" />
+					<TechIcon name="jira" />
+					<TechIcon name="postman" />
+					<TechIcon name="figma" />
+					<TechIcon name="windows8" />
+					<TechIcon name="linux" />
+					<TechIcon name="vscode" />
+					<TechIcon name="visualstudio" />
+					<TechIcon name="blender" />
+					<TechIcon name="electron" />
+				</Grid>
+			</CenterBox>
+			<CenterBox title="Work breakdown (hours this week)">
+				<BarChart width={500} height={300} data={langData}>
+					<XAxis stroke={white} dataKey="name" />
+					<YAxis
+						type="number"
+						stroke={white}
+						dataKey="decimal"
+						range={[0, maxHours]}
+					/>
+					<Tooltip
+						contentStyle={{
+							backgroundColor: brown,
+							borderColor: 'black',
+							borderRadius: '8px',
+						}}
+					/>
+					<Bar dataKey="decimal" fill={chartColors[0]}>
+						{langData.map((_entry: any, index: any) => (
+							<Cell
+								key={`cell-${index}`}
+								fill={chartColors[index % chartColors.length]}
+							/>
+						))}
+					</Bar>
+				</BarChart>
+				<p style={{ fontStyle: 'italic', textAlign: 'center' }}>
+					Stats powered by{' '}
+					<a href="https://wakatime.com/dashboard">WakaTime</a>
+				</p>
+			</CenterBox>
 			<CenterBox title="About me">
 				<p>
 					I'm a recent college graduate from the Greater Seattle Area
@@ -82,38 +169,6 @@ function App() {
 					</a>{' '}
 					if you'd like to connect or grab a cup of coffee. Let's
 					build something together!
-				</p>
-			</CenterBox>
-			<CenterBox title="Skills and technologies" dotted>
-				<p>
-					C#, JavaScript, TypeScript, Python, Java, HTML, CSS, C++, JSON
-				</p>
-				<p>
-					Unity, React.js, Express.js, AWS, Firebase, Vite, Swagger, Electron
-				</p>
-				<p>
-					Git, GitHub, Jira, Figma, Cloudflare Pages
-				</p>
-			</CenterBox>
-			<CenterBox title="Work breakdown (hours this week)">
-				<BarChart width={500} height={300} data={langData}>
-					<XAxis stroke={white} dataKey="name" />
-					<YAxis stroke={white} dataKey="decimal"/>
-					<Tooltip contentStyle={{
-						backgroundColor: 'black'
-					}}/>
-					<Bar dataKey="decimal" fill={chartColors[0]}>
-						{langData.map((_entry: any, index: any) => (
-							<Cell
-								key={`cell-${index}`}
-								fill={chartColors[index % chartColors.length]}
-							/>
-						))}
-					</Bar>
-				</BarChart>
-				<p>
-					Powered by{' '}
-					<a href="https://wakatime.com/dashboard">WakaTime</a>
 				</p>
 			</CenterBox>
 		</>
