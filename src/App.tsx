@@ -39,6 +39,30 @@ function App() {
 		fetchData();
 	}, []);
 
+	const CustomTooltip = ({
+		active,
+		payload,
+		label,
+	}: {
+		active: any;
+		payload: any;
+		label: any;
+	}) => {
+		if (active && payload && payload.length) {
+			return (
+				<div className="custom-tooltip">
+					<p className="label">{`${label} : ${payload[0].value}`}</p>
+					<p className="intro">{`huh?`}</p>
+					<p className="desc">
+						Anything you want can be displayed here.
+					</p>
+				</div>
+			);
+		}
+
+		return null;
+	};
+
 	return (
 		<>
 			<Spinner></Spinner>
@@ -53,11 +77,24 @@ function App() {
 				href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
 			/>
 			<h1>Caleb Rector</h1>
-			<br/>
+			<br />
 			<CenterBox title="">
-				<p>GitHub: <a href="https://github.com/carector">github.com/carector</a></p>
-				<p>LinkedIn: <a href="https://linkedin.com/in/caleb-rector">linkedin.com/in/caleb-rector</a></p>
-				<p>Creative projects: <a href="https://noise.town">noise.town</a></p>
+				<p>
+					GitHub:{' '}
+					<a href="https://github.com/carector">
+						github.com/carector
+					</a>
+				</p>
+				<p>
+					LinkedIn:{' '}
+					<a href="https://linkedin.com/in/caleb-rector">
+						linkedin.com/in/caleb-rector
+					</a>
+				</p>
+				<p>
+					Creative projects:{' '}
+					<a href="https://noise.town">noise.town</a>
+				</p>
 			</CenterBox>
 			<CenterBox title="Skills and technologies" dotted>
 				<Grid
