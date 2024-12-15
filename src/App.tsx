@@ -1,6 +1,6 @@
 import './App.css';
 // import Sidebar from './components/custom/sidebar';
-import { Grid } from '@chakra-ui/react';
+import { Text, Grid, Separator, Stack, HStack } from '@chakra-ui/react';
 import TechIcon from './components/custom/techicon';
 import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
@@ -63,6 +63,10 @@ function App() {
 		return null;
 	};
 
+	function DashedSeparator() {
+		return <Separator flex="1" borderColor={white} variant={'dashed'} />;
+	}
+
 	return (
 		<>
 			<Spinner></Spinner>
@@ -96,44 +100,72 @@ function App() {
 					<a href="https://noise.town">noise.town</a>
 				</p>
 			</CenterBox>
-			<CenterBox title="Skills and technologies" dotted>
-				<Grid
-					templateRows="repeat(1, 1fr)"
-					templateColumns="repeat(7, 1fr)"
-				>
+			<CenterBox title="Skills" dotted>
+				<Stack>
+					<HStack>
+						<Text flexShrink="0">Languages</Text>
+						<DashedSeparator />
+					</HStack>
 					{/* <p style={{ textAlign: 'center' }}>Languages</p> */}
-					<TechIcon name="csharp" />
-					<TechIcon name="javascript" />
-					<TechIcon name="typescript" />
-					<TechIcon name="python" />
-					<TechIcon name="java" />
-					<TechIcon name="html5" />
-					<TechIcon name="css3" />
-					<TechIcon name="cplusplus" />
-					<TechIcon name="json" />
-					<TechIcon name="unity" />
-					<TechIcon name="react" />
-					{/* <TechIcon name="express" /> */}
-					<TechIcon name="amazonwebservices" />
-					<TechIcon name="firebase" />
-					<TechIcon name="mysql" />
-					<TechIcon name="vite" />
-					<TechIcon name="swagger" />
-					<TechIcon name="cloudflare" />
-					<TechIcon name="docker" />
-					<TechIcon name="antdesign" />
-					<TechIcon name="git" />
-					<TechIcon name="github" />
-					<TechIcon name="jira" />
-					<TechIcon name="postman" />
-					<TechIcon name="figma" />
-					<TechIcon name="windows8" />
-					<TechIcon name="linux" />
-					<TechIcon name="vscode" />
-					<TechIcon name="visualstudio" />
-					<TechIcon name="blender" />
-					<TechIcon name="electron" />
-				</Grid>
+					<Grid
+						templateRows="repeat(1, 1fr)"
+						templateColumns="repeat(9, 1fr)"
+					>
+						<TechIcon name="csharp-plain" tooltip='C#' />
+						<TechIcon name="javascript-plain" tooltip='JavaScript' />
+						<TechIcon name="typescript-plain" tooltip='TypeScript' />
+						<TechIcon name="python-plain" tooltip='Python' />
+						<TechIcon name="java-plain" tooltip='Java' />
+						<TechIcon name="html5-plain" tooltip='HTML5' />
+						<TechIcon name="css3-plain" tooltip='CSS' />
+						<TechIcon name="json-plain" tooltip='JSON' />
+						<TechIcon name="cplusplus-plain" tooltip='C++' />
+					</Grid>
+					<HStack>
+						<Text flexShrink="0">Technologies</Text>
+						<DashedSeparator />
+					</HStack>
+					<Grid
+						templateRows="repeat(1, 1fr)"
+						templateColumns="repeat(9, 1fr)"
+					>
+						<TechIcon name="react-plain" tooltip='React.js' />
+						<TechIcon name="express-original" tooltip='Express.js' />
+						<TechIcon name="vite-plain" tooltip='Vite' />
+						<TechIcon name="git-plain" tooltip='Git' />
+						<TechIcon name="github-plain" tooltip='GitHub' />
+						<TechIcon name="jira-plain" tooltip='Jira' />
+						<TechIcon name="postman-plain" tooltip='Postman' />
+						<TechIcon name="figma-plain" tooltip='Figma' />
+						<TechIcon name="cloudflare-plain" tooltip='Cloudflare' />
+						<TechIcon name="axios-plain" tooltip='Axios' />
+						<TechIcon name="mysql-plain" tooltip='MySQL' />
+						<TechIcon name="antdesign-plain" tooltip='Ant Design' />
+						<TechIcon name="amazonwebservices-plain" tooltip='Amazon Web Services' />
+						<TechIcon name="firebase-plain" tooltip='Firebase' />
+						<TechIcon name="docker-plain" tooltip='Docker' />
+						<TechIcon name="swagger-plain" tooltip='Swagger.js' />
+						<TechIcon name="dotnetcore-plain" tooltip='.NET Core' />
+						<TechIcon name="electron-original" tooltip='Electron' />
+					</Grid>
+					<HStack>
+						<Text flexShrink="0">Software</Text>
+						<DashedSeparator />
+					</HStack>
+					{/* <p style={{ textAlign: 'center' }}>Languages</p> */}
+					<Grid
+						templateRows="repeat(1, 1fr)"
+						templateColumns="repeat(7, 1fr)"
+					>
+						<TechIcon name="unity-plain" tooltip='Unity' />
+						<TechIcon name="windows8-plain" tooltip='Windows' />
+						<TechIcon name="linux-plain" tooltip='Linux' />
+						<TechIcon name="vscode-plain" tooltip='Visual Studio Code' />
+						<TechIcon name="visualstudio-plain" tooltip='Visual Studio' />
+						<TechIcon name="blender-original" tooltip='Blender' />
+						<TechIcon name="arduino-plain" tooltip='Arduino' />
+					</Grid>
+				</Stack>
 			</CenterBox>
 			<CenterBox title="Work breakdown (hours this week)">
 				<BarChart width={500} height={300} data={langData}>
@@ -173,8 +205,8 @@ function App() {
 				</p>
 				<br />
 				<p>
-					I'm most interested in backend web development roles. I have
-					1 year of professional experience with Express.js and would
+					I'm most interested in backend web development jobs.
+					I have 1 year of professional experience with Express.js and would
 					be comfortable working in any JavaScript or TypeScript role.
 					Technologies I worked with extensively at my most recent
 					position include React.js, AWS, Postman, and Jira.
