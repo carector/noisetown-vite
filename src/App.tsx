@@ -4,7 +4,11 @@ import { Text, Grid, Separator, Stack, HStack } from '@chakra-ui/react';
 import TechIcon from './components/custom/techicon';
 import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
-import { Cell, Tooltip, BarChart, XAxis, YAxis, Bar } from 'recharts';
+import { Cell, Tooltip, TooltipProps, BarChart, XAxis, YAxis, Bar } from 'recharts';
+import {
+	ValueType,
+	NameType,
+} from 'recharts/types/component/DefaultTooltipContent';
 import { useEffect, useState } from 'react';
 //import * as wakatime from './utils.js';
 
@@ -33,30 +37,32 @@ function App() {
 		const fetchData = async () => {
 			const res = await getAllTimeSinceToday();
 			setLangData(res.data.slice(0, 5));
-			console.log(res.data[0]['decimal']);
+			//console.log(res.data);
 			setMaxHours(res.data[0]['decimal']);
 		};
 		fetchData();
 	}, []);
 
-	const CustomTooltip = ({
+	function getTextFromLangEntry(name: string) {
+		const e = langData.find((element) => element['name'] == name);
+		if (e === undefined) return 'N/A';
+		return e['text'];
+	}
+
+	const WakatimeTooltip = ({
 		active,
 		payload,
 		label,
-	}: {
-		active: any;
-		payload: any;
-		label: any;
-	}) => {
+	}: TooltipProps<ValueType, NameType>) => {
 		if (active && payload && payload.length) {
-			return (
-				<div className="custom-tooltip">
-					<p className="label">{`${label} : ${payload[0].value}`}</p>
-					<p className="intro">{`huh?`}</p>
-					<p className="desc">
-						Anything you want can be displayed here.
-					</p>
-				</div>
+			return (<div className="custom-tooltip" style={{	// TODO - look into recharts css file, these classes should all be defined
+				backgroundColor: brown,
+				borderColor: 'black',
+				borderRadius: '8px',
+			}}>
+				<p className="label">{label}</p>
+				<p className="intro">{getTextFromLangEntry(label)}</p>
+			</div>
 			);
 		}
 
@@ -176,13 +182,7 @@ function App() {
 						dataKey="decimal"
 						range={[0, maxHours]}
 					/>
-					<Tooltip
-						contentStyle={{
-							backgroundColor: brown,
-							borderColor: 'black',
-							borderRadius: '8px',
-						}}
-					/>
+					<Tooltip content={<WakatimeTooltip />} />
 					<Bar dataKey="decimal" fill={chartColors[0]}>
 						{langData.map((_entry: any, index: any) => (
 							<Cell
