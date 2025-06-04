@@ -87,7 +87,7 @@ function App() {
 	}
 
 	return (
-		<>
+		<div style={{verticalAlign: 'top'}}>
 			<link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
 			<Spinner></Spinner>
 			<br></br>
@@ -349,7 +349,7 @@ function App() {
 					</CenterBox>
 				</Tabs.Content>
 			</Tabs.Root>
-		</>
+		</div>
 	);
 }
 
