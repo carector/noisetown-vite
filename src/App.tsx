@@ -1,10 +1,8 @@
 import './App.css';
-import Sidebar from './components/custom/sidebar';
 import { Text, Grid, Separator, Stack, HStack, Tabs } from '@chakra-ui/react';
 import TechIcon from './components/custom/techicon';
 import Spinner from './components/custom/spinner';
 import CenterBox from './components/custom/centerbox';
-import { Container } from '@chakra-ui/react';
 import {
 	Cell,
 	Tooltip,
