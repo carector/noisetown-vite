@@ -20,6 +20,7 @@ function CenterBox({ title, dotted, children }: CenterCardProps) {
 				padding={0}
 				fluid={true}
 				maxW={{ md: '2xl', mdDown: '100vw' }}
+				minW={{mdDown: '80vw', md: '2xl'}}
 			>
 				<Heading
 					padding={2}
@@ -46,7 +47,7 @@ function CenterBox({ title, dotted, children }: CenterCardProps) {
 					</Text> */}
 				</Box>
 			</Container>
-			<br/>
+			<br />
 		</>
 	);
 }

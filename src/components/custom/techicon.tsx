@@ -1,6 +1,6 @@
 import { Tooltip } from "@/components/ui/tooltip"
 
-function TechIcon({ name, tooltip }: { name: string, tooltip: string }) {
+function TechIcon({ name, tooltip}: { name: string, tooltip: string}) {
 	const url = `devicon-${name} colored`;
 	return (
 		<div>

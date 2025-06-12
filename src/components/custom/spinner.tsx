@@ -14,7 +14,7 @@ function Spinner() {
 					top: '15%',
 					width: '80%',
 					maxWidth: '600',
-					animation: `spin 3s linear infinite`,
+					animation: `spin 120s linear infinite`,
 				}}
 				src={orangeCirc}
 			/>
