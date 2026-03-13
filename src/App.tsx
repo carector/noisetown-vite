@@ -23,7 +23,7 @@ import { useEffect, useState } from 'react';
 
 async function getAllTimeSinceToday() {
 	const response = await fetch(
-		'https://wakatime.com/share/@59402cab-1799-4733-b30d-ec5d8ed0a7c9/69dd4ca1-3a95-49d1-910b-85cab2183232.json'
+		'https://wakatime.com/share/@59402cab-1799-4733-b30d-ec5d8ed0a7c9/69dd4ca1-3a95-49d1-910b-85cab2183232.json',
 	);
 	return response.json();
 }
@@ -135,16 +135,22 @@ function App() {
 					<CenterBox title="Unity Portfolio">
 						<iframe
 							width="100%"
-							height="480"
-							src="https://www.youtube.com/embed/aCm-gKr2SzQ?si=T93TEwMWz3Yl7z08&amp;controls=0"
+							height="315"
+							src="https://www.youtube.com/embed/o53RM-v99L8?si=5PgyGGKJ-ck8uj5T"
+							title="YouTube video player"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerPolicy="strict-origin-when-cross-origin"
-							allowFullScreen
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
 						></iframe>
 					</CenterBox>
 					<CenterBox title="Activity this week">
 						<ResponsiveContainer width="90%" height={300}>
-							<BarChart width={500} height={300} data={langData} maxBarSize={70}>
+							<BarChart
+								width={500}
+								height={300}
+								data={langData}
+								maxBarSize={70}
+							>
 								<XAxis stroke={white} dataKey="name" />
 								{/* <YAxis
 									type="number"
